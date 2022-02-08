@@ -32,9 +32,10 @@ function TodoList({
                 <div>
                     {
                         todos.map((todo, index) => (
-                            <div 
-                                className={`todo-item ${todo.completed && "todo-item-active"}`} 
+                            <div
+                                className={`todo-item ${todo.completed && "todo-item-active"}`}
                                 onClick={() => updateTask(todo.id)}
+                                data-testid="task-container"
                             >
                                 {todo.task}
                             </div>
@@ -43,7 +44,7 @@ function TodoList({
                 </div>
             </div>
             <div>
-                <TodoFooter 
+                <TodoFooter
                     numberOfIncompleteTasks={calcNumberOfIncompletedTasks()}
                 />
             </div>
